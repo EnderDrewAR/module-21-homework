@@ -1,7 +1,7 @@
-using System;
 using UnityEngine;
 
-public class PhysicsItem : MonoBehaviour, IDraggable, IExplosive
+[RequireComponent(typeof(Rigidbody))]
+public class PhysicsItem : MonoBehaviour, IDraggable, IExplodable
 {
     [SerializeField] private float _dragSmoothness = 15f;
 
@@ -18,7 +18,7 @@ public class PhysicsItem : MonoBehaviour, IDraggable, IExplosive
     
     private void FixedUpdate()
     {
-        if (!_isDragging)
+        if (_isDragging == false)
             return;
 
         float t = 1f - Mathf.Exp(
@@ -36,6 +36,7 @@ public class PhysicsItem : MonoBehaviour, IDraggable, IExplosive
 
     public void BeginDrag()
     {
+        _targetPosition = _rigidbody.position;
         _isDragging = true;
         _rigidbody.isKinematic = true;
     }

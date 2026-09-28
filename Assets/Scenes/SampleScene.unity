@@ -2714,7 +2714,6 @@ Transform:
   - {fileID: 2052995516}
   - {fileID: 600633100}
   - {fileID: 1682079486}
-  - {fileID: 2140197998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &175866365 stripped
@@ -11149,7 +11148,7 @@ GameObject:
   - component: {fileID: 676582062}
   - component: {fileID: 676582063}
   m_Layer: 0
-  m_Name: DragController
+  m_Name: Example
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11179,7 +11178,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 676582061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e98faa4295062429ba7ee48f202f19, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e7539ccb729473e9f5c43e58c706457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _draggableMask:
@@ -11188,6 +11187,17 @@ MonoBehaviour:
   _groundMask:
     serializedVersion: 2
     m_Bits: 128
+  _inputController: {fileID: 1485709293}
+  _camera: {fileID: 330585545}
+  _cameras:
+  - {fileID: 1682079487}
+  - {fileID: 2052995517}
+  - {fileID: 600633101}
+  _maxDistance: 100
+  _explosionRadius: 5
+  _explosionForce: 10
+  _explosionEffectPrefab: {fileID: 72765508469215125, guid: f90fb410499b4004fa0390f787315298,
+    type: 3}
 --- !u!1001 &681751875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24229,8 +24239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928e662feb1d4f029d7193e5da8f905f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dragController: {fileID: 676582063}
-  _explosionController: {fileID: 1873979571}
 --- !u!1001 &1494020024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26535,7 +26543,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 676582062}
-  - {fileID: 1873979572}
   - {fileID: 1485709292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31538,60 +31545,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 992994728}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1873979570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1873979572}
-  - component: {fileID: 1873979571}
-  m_Layer: 0
-  m_Name: ExplosionController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1873979571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873979570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef0a72404872eb941978f282b8b4723d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _draggableMask:
-    serializedVersion: 2
-    m_Bits: 64
-  _groundMask:
-    serializedVersion: 2
-    m_Bits: 128
-  _explosionRadius: 5
-  _explosionForce: 10
-  _explosionEffectPrefab: {fileID: 72765508469215125, guid: f90fb410499b4004fa0390f787315298,
-    type: 3}
---- !u!4 &1873979572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1873979570}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1610494866}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876716608
 GameObject:
   m_ObjectHideFlags: 0
@@ -35698,54 +35651,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 805057538}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2140197997
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2140197998}
-  - component: {fileID: 2140197999}
-  m_Layer: 0
-  m_Name: CameraModeSwithcer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2140197998
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140197997}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8379927, y: 0.8578982, z: 2.527176}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 170303437}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2140197999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2140197997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e661a316a65da4d88abd1868146b9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _cameras:
-  - {fileID: 1682079487}
-  - {fileID: 2052995517}
-  - {fileID: 600633101}
 --- !u!4 &2146533683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c9f6d988e77b8f46919cf52ab0b8ec5,
